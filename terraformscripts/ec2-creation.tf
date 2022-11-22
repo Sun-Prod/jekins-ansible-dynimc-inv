@@ -3,13 +3,13 @@ provider "aws"{
 }
 
 resource "aws_instance" "AWSEC2Instance"{
-     count   = 1
-     ami = "ami-0b2aec26bb1a5169d"
-     instance_type = "t2.micro"
-     security_groups = ["launch-wizard-2"]
-     key_name        = "devopsmss"
-     tags = {
-        Name = "tomcatserver"
-     }
+    count = 1
+    ami = "ami-050c88925ff2bb50"
+    instance_type = "t2.micro"
+    key_pair = "sunproddevops"
+    security_groups = ["launch-wizard-11"]
+    tags{
+        name = "tomcatserver"
+    }
 }
 
